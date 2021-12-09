@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Introduction to Binary </title>
+	</head>
+	<body>
+		<h1> Introduction to Binary </h1>
+		<p> Binary is a special kind of number that computers use to process and store information. It is a base 2 number system, consisting of only 1's and 0's. The number 1 represents ON, while the number 0 represents OFF. 
+		    In computer architecture, each digit of a binary number takes up one bit of storage.          
+		    Each spot of a binary number represents 2 to the power of some number. We start at a power of 0 for the rightmost digit, then increase the power by each place we move.  
+		    Let's take a look at an example. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Consider the binary number: 0110<sub>2</sub> <br>
+		    How would we go about finding the value of this number? <br>
+		    Well, we first determine which positions have value. To determine this, we look for a 1 or a 0. <br> </p>
+		<p> 0 indicates the spot does not hold value (OFF). 1 indicates that the spot does hold value (ON). <br> </p>
+		<p> In the case of 0110<sub>2</sub>, the 2nd and 3rd column hold value. This is indicated by the 1. <br> 
+		    Note: We determine binary columns starting from the right. <br> </p>
+		<pre>   0   1   1   0   </pre>
+	        <pre>   ^   ^   ^   ^   </pre>
+		<pre>  4th 3rd 2nd 1st  </pre>    
+		<p> Now that we know which columns hold value, we can move on to calculating the number. To do this, we raise 2 to a certain power based on its column placement. <br>
+		    We start at 2<sup>0</sup> for the rightmost column, then add one to the exponent for each column left of it. </p>
+		<pre>   0   1   1   0   </pre>
+		<pre>  --------------   </pre>
+		<pre>   2<sup>3</sup>  2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup> </pre>
+		<p> After this, we evaluate the exponents. </p>
+		<pre>   0   1   1   0   </pre>
+		<pre>  --------------   </pre>
+		<pre>   8   4   2   1   </pre>
+		<p> The final step is to add the numbers where there is a 1 (ON) in the original binary. Do not add numbers if they correspond to a 0 (OFF) in the original binary number. <br>
+		    In our case, since there is a 1 corresponding to the 2nd and 3rd column, we will add the 4 and 2. <br>
+		    Thus, 0110<sub>2</sub> in binary is 6.  </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Consider the binary number: 01110011 <br>
+		    To find the value of this binary number, we will first determine the important positions. </p>
+		<pre>   0   1   1   1   0   0   1   1   </pre>
+		<pre>   ^   ^   ^   ^   ^   ^   ^   ^   </pre>
+		<pre>  8th 7th 6th 5th 4th 3rd 2nd 1st  </pre>
+		<p> Looking at this, we can see that the value-containing (ON) positions are the 7th, 6th, 5th, 2nd, and 1st columns. We know this because there is a 1 in those columns. <br>
+		    Next, we will set up our exponents. </p>
+		<pre>   0   1   1   1   0   0   1   1   </pre>
+		<pre>  ------------------------------   </pre>
+		<pre>   2<sup>7</sup>  2<sup>6</sup>  2<sup>5</sup>  2<sup>4</sup>  2<sup>3</sup>  2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup> </pre>
+		<p> After we have done this, we can evaluate our exponents </p>
+		<pre>   0   1   1   1   0   0   1   1   </pre>
+		<pre>  ------------------------------   </pre>
+		<pre>  128  64  32  16  8   4   2   1   </pre>
+		<p> Our final step is to add the columns that have a 1 in them. In this particular case, we will add the 7th, 6th, 5th, 2nd, and 1st columns together. <br>
+		    This means we add 64 + 32 + 16 + 2 + 1 together, resulting in 115 <br>
+		    So, 01110011<sub>2</sub> in binary is 115 </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Practice Problems </pre>
+	</body>		
+</html>

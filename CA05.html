@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Signed Magnitude, One's Compliment, and Two's Compliment</title>
+	</head>
+	<body>
+		<h1>Signed Magnitude, One's Compliment, Two's Compliment</h1>
+		<p>Signed Magnitude, One's Compliment, and Two's Compliment seek to solve the issue of how to represent a negative number in binary code. Each of these systems take it's own different approach to this problem. </p>
+		<h2> Signed Magnitude </h2>
+		<p> In signed magnitude, the leftmost bit is reserved and used as a sign bit. This sign bit determines if the binary number in question is positive or negative. <br>
+	  	    If the leftmost bit is a 1, it means the numbers is a negative. If the leftmost bit is a 0, it means the number is positive. </p>
+		<p> The range of numbers that signed magnitude can represent is dependent on the size of the binary number. N (The bit length of the binary number) can be used in a formula to calulate the range of valid numbers. <br>
+		    This formula is as follows. -(2<sup>N-1</sup>-1) to +(2<sup>N-1</sup>-1) where N is the bit length. Let's try an example.</p>
+		<h3>Find the valid range of a signed magnitude number</h3>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Find the valid range of numbers for 4 bits. <br> 
+		    We know that N (our bit length) is 4. So, we plug this into our equation </p>
+		<pre>  -(2<sup>4-1</sup>-1) to +(2<sup>4-1</sup>-1) </pre>
+		<pre>  -(2<sup>3</sup>-1) to +(2<sup>3</sup>-1) </pre>
+		<pre>  -(8-1) to +(8-1) </pre>
+		<pre>  -7 to +7 </pre>
+		<p> So, our valid range of numbers in signed magnitude for bit lenth 4 is -7 to +7. <br>
+		    If we have a 4 bit binary number and we use 1 bit for the sign, we can only use 3 to hold value. </p>
+		<pre> 0   |   0   0   0 </pre>
+		<pre> ^       ^   ^   ^ </pre>
+		<pre>Sign   Value holding</pre>
+		<p>------------[+7]----------</p>
+		<pre> 0   |   1   1   1 </pre>
+		<pre> ^       ^   ^   ^ </pre>
+		<pre> +       4   2   1 </pre>
+		<p>------------[-7]----------</p>
+		<pre> 1   |   1   1   1 </pre>
+		<pre> ^       ^   ^   ^ </pre>
+		<pre> -       4   2   1 </pre>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Find the valid range of numbers for 6 bits. <br> 
+		    We know that N (our bit length) is 6. So, we plug this into our equation </p>
+		<pre>  -(2<sup>6-1</sup>-1) to +(2<sup>6-1</sup>-1) </pre>
+		<pre>  -(2<sup>5</sup>-1) to +(2<sup>5</sup>-1) </pre>
+		<pre>  -(32-1) to +(32-1) </pre>
+		<pre>  -31 to +31 </pre>
+		<p> So, our valid range of numbers in signed magnitude for bit lenth 6 is -31 to +31. <br>
+		    If we have a 6 bit binary number and we use 1 bit for the sign, we can only use 5 to hold value. </p>
+		<pre> 0   |   0   0   0   0   0 </pre>
+		<pre> ^       ^   ^   ^   ^   ^ </pre>
+		<pre>Sign      Value holding    </pre>
+		<p>------------[+31]----------</p>
+		<pre> 0   |   1   1   1   1   1 </pre>
+		<pre> ^       ^   ^   ^   ^   ^ </pre>
+		<pre> +       16  8   4   2   1 </pre>
+		<p>------------[-31]----------</p>
+		<pre> 1   |   1   1   1   1   1 </pre>
+		<pre> ^       ^   ^   ^   ^   ^ </pre>
+		<pre> -       16  8   4   2   1 </pre>
+		<h3>Find a particular binary number in signed magnitude</h3>
+		<p> Finding a number in signed magnitude is easy. To do this, we first find the normal binary representation, then add on a sign bit. <br>
+		    We add on a 1 if the number is negative, and a 0 if the number is positive. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Find the signed magnitude representation of -20 <br>
+		    Our first step is to find the normal binary representation for the number 20. </p>
+		<pre> 0   0   0   0   0 </pre>
+		<pre> ----------------- </pre>
+		<pre> 16  8   4   2   1 </pre>
+		<p> We ask ourselves, which combination would give us 20? Well, 16 + 4 would, so we put a 1 in those columns</p>
+		<pre> 1   0   1   0   0 </pre>
+		<pre> ----------------- </pre>
+		<pre> 16  8   4   2   1 </pre>
+		<p>After doing this, we see that 20 in binary is 10100<sub>2</sub><br>
+		   Now, all we have to do is add a 1 or a 0, depending on if we're trying to find the positive or negative version of 20. <br>
+		   Since we are trying to find the negative version, we add on a 1 for our sign bit. So, we get </p>
+		<pre> 1 + 10100 </pre>
+		<p> -20 in signed magnitude is 110100<sub>2</sub> </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Find the signed magnitude representation of +20 <br>
+		    From our last example, we know that 20 in binary is 10100<sub>2</sub></p>
+		<pre> 1   0   1   0   0 </pre>
+		<pre> ----------------- </pre>
+		<pre> 16  8   4   2   1 </pre>	
+		<p>Now, we just add on a 0 for the sign bit because we are trying to find the positive version of 20.
+		<pre> 0 + 10100 </pre>
+		<p> +20 in signed magnitude is 010100<sub>2</sub> </p>
+		
+		
+	</body>		
+</html>

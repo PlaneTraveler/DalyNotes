@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Radix Forms </title> 
+		<style>
+		table, th, td {
+  		border: 1px solid black;
+		}
+		</style>
+	</head>
+<body> 
+	<h1>Radix Forms </h1>
+	<p>Radix forms are a way of representing numbers that are in a specific number system. Binary, Decimal, and Octal can all be represented in a radix form. <br>
+	   We can represent these forms of numbers by using the base of the number system raised to the position of the number, and then multiplying that by the corrisponding value in the original number. We then add all of our numbers together.  </p>
+	<h2> Binary Radix Representation </h2>
+	<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </p>
+	<p>Consider the binary number 11001<sub>2</sub> <br>
+	   To go about representing this as a radix form, we multiply each number by the base raised to the position of the number. We then add everything up.<br>
+	   Let's first determine the positions of the numbers. </p>
+	<p> Note: Since we are using a base 2 number system (Binary) we use base 2 and raise it to the position of the numbers. </p>
+	<pre> 1   1   0   0   1 </pre>
+	<pre> ----------------- </pre>
+	<pre> 2<sup>4</sup>  2<sup>3</sup>  2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup> </pre>
+	<p> Now that we have determined the positions of this binary number, all that is left to do is multiply the numbers by the matching binary number. <br>
+	    Starting from the left, our first part of the radix form is </p>
+	<pre> 1 x 2<sup>4</sup> </pre>
+	<p> This is because we have a 1 that corrisponds to the 2<sup>4</sup> position. Next, we add </p>
+	<pre> 1 x 2<sup>4</sup> + 1 x 2<sup>3</sup> </pre> 
+	<p> Because we see a 1 is corrisponding to the 2<sup>3</sup> position, we multiply by 1. We then do </p>
+	<pre> 1 x 2<sup>4</sup> + 1 x 2<sup>3</sup> + 0 x 2<sup>2</sup>  </pre> 
+	<p> We see that a 0 is corrisponding to the 2<sup>2</sup> position. So, we multiply by 0. After this, we do </p>
+	<pre> 1 x 2<sup>4</sup> + 1 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 0 x 2<sup>1</sup>  </pre>
+	<p> Since a 0 corrisponds to 2<sup>1</sup>, we multiply that by 0. Finally, we have </p>
+	<pre> 1 x 2<sup>4</sup> + 1 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 0 x 2<sup>1</sup> + 1 x 2<sup>0</sup> </pre>
+	<p> 1 corrisponds to 2<sup>0</sup>, so we multiply by 1. <br>
+	    Now that we have gone through each position, we are done! <br>
+	    11001<sub>2</sub> represented as a radix form is </p> 
+	<pre> 1 x 2<sup>4</sup> + 1 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 0 x 2<sup>1</sup> + 1 x 2<sup>0</sup> </pre>
+	<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </p>
+	<p> Consider the binary number 111.011 <br>
+	    To represent this as a radix form, we first should determine the positions of the numbers. </p>
+	<pre> 1   1   1   .   0   1   1 </pre>
+	<pre> ------------------------- </pre>
+	<pre> 2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup>     2<sup>-1</sup>  2<sup>-2</sup>  2<sup>-3</sup></pre>
+	<p> After this, we simply multiply by 1 or 0 depending on if we see a 1 or 0 in the original binary number. After that, we add everything. This gives us </p>
+	<pre> 1 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 1 x 2<sup>0</sup> + 0 x 2<sup>-1</sup> + 1 x 2<sup>-2</sup> + 1 x 2<sup>-3</sup> </pre>
+	<p> So, 111.011 represented as a radix form is 1 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 1 x 2<sup>0</sup> + 0 x 2<sup>-1</sup> + 1 x 2<sup>-2</sup> + 1 x 2<sup>-3</sup> </p>
+	<h2> Decimal Radix Representation </h2> 
+	<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </p>
+	<p> Consider the decimal number 432.1<sub>10</sub> <br>
+	    Since we are using a decimal number, we use base 10, and raise it to the position of the numbers. Let's first determine positions. </p>
+	<pre>  4   3   2   .   1 </pre>
+	<pre> ----------------- </pre>
+	<pre> 10<sup>2</sup> 10<sup>1</sup> 10<sup>0</sup>    10<sup>-1</sup> </pre>
+	<p> Notice how we are using base 10. Our exponents remain the same, but since this is a decimal number, we use base 10 instead of base 2 like when we did a binary number. <br>
+	    Now, all that we need to do is multiply the position with the corrisponding number. After we do this, we add everything together. </p>
+	<pre> 4 x 10<sup>2</sup> + 3 x 10<sup>1</sup> + 2 x 10<sup>0</sup> + 1 x 10<sup>-1</sup> </pre>
+	<p> So, 432.1<sub>10</sub> represented as a radix form is 4 x 10<sup>2</sup> + 3 x 10<sup>1</sup> + 2 x 10<sup>0</sup> + 1 x 10<sup>-1</sup> </p>
+	<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </p>
+	<p> Consider the decimal number 999.44<sub>10</sub> <br>
+	    Before we start, let's determine the positions of the numbers. Remember, we use base 10 since we are using the decimal number system.</p>
+	<pre>  9   9   9   .   4   4 </pre>
+	<pre> ---------------------- </pre>
+	<pre> 10<sup>2</sup> 10<sup>1</sup> 10<sup>0</sup>     10<sup>-1</sup> 10<sup>-2</sup> </pre>
+	<p> We then multiply by the number we see that corrisponds. After that, we add everything together.  </p>
+	<pre> 9 x 10<sup>2</sup> + 9 x 10<sup>1</sup> + 9 x 10<sup>0</sup> + 4 x 10<sup>-1</sup> + 4 x 10<sup>-2</sup> </pre>
+	<p> So, 999.44<sub>10</sub> as a radix form is 9 x 10<sup>2</sup> + 9 x 10<sup>1</sup> + 9 x 10<sup>0</sup> + 4 x 10<sup>-1</sup> + 4 x 10<sup>-2</sup> </p>
+	<h2> Hexadecimal Radix Representation </h2>
+	<table style ="width: 10%">
+			<tr>
+				<th>Binary</th>
+				<th>Hexadecimal</th>
+				<th>Decimal </th>
+			</tr>
+			<tr> 
+				<td>0000</td>
+				<td>  0 </td>
+				<td> 0 </td>
+			</tr>
+			<tr> 
+				<td>0001</td>
+				<td>  1 </td>
+				<td> 1 </td> 
+			</tr>
+			<tr> 
+				<td>0010</td>
+				<td> 2  </td>
+				<td> 2  </td>
+			</tr>
+			<tr> 
+				<td>0011</td>
+				<td> 3  </td>
+				<td> 3  </td>
+			</tr>
+			<tr> 
+				<td>0100</td>
+				<td>  4  </td>
+				<td>  4 </td>
+			</tr>
+			<tr> 
+				<td>0101</td>
+				<td>  5  </td>
+				<td>  5  </td>
+			</tr>
+			<tr> 
+				<td>0110</td>
+				<td>  6  </td>
+				<td>  6  </td>
+			</tr>
+			<tr> 
+				<td>0111</td>
+				<td>  7  </td>
+				<td>  7  </td>
+			</tr>
+			<tr> 
+				<td>1000</td>
+				<td>  8  </td>
+				<td>  8  </td>
+			</tr>
+			<tr> 
+				<td>1001</td>
+				<td>  9  </td>
+				<td>  9  </td>
+			</tr>
+			<tr> 
+				<td>1010</td>
+				<td>  A  </td>
+				<td>  10  </td>
+			</tr>
+			<tr> 
+				<td>1011</td>
+				<td>  B  </td>
+				<td>  11  </td>
+			</tr>
+			<tr> 
+				<td>1100</td>
+				<td>  C  </td>
+				<td>  12  </td>
+			</tr>
+			<tr> 
+				<td>1101</td>
+				<td>  D </td>
+				<td>  13  </td>
+			</tr>
+			<tr> 
+				<td>1110</td>
+				<td>  E  </td>
+				<td>  14  </td>
+			</tr>
+			<tr> 
+				<td>1111</td>
+				<td>  F  </td>
+				<td>  15  </td>
+			</tr>
+		</table>
+	<p> When representing a hexadecimal number as a radix form, sometimes we must convert our characters into numbers. <br>
+	    For example, you are unable to use the letter D in a radix form. You must convert this letter into the number 13, since our table tells us that D = 13 </p>
+	<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </p>
+	<p> Consider the number 4AB.D1<sub>16</sub> <br>
+	    We first determine which position each number/character is in. Make sure to use a base of 16 for positional numbers, since we are representing a hexadecimal number. </p>
+	<pre> 4   A   B   .   D   1 </pre>
+	<pre> --------------------- </pre>
+	<pre>16<sup>2</sup> 16<sup>1</sup> 16<sup>0</sup>     16<sup>-1</sup> 16<sup>-2</sup> </pre> 
+	<p> Now, all that remains to be done is to multiply each value in our original hexadecimal number by the corrisponding value. Then, we add everything together.  So, we do </p>
+	<pre> 4 x 16<sup>2</sup> + A x 16<sup>1</sup> + B x 16<sup>0</sup> + D x 16<sup>-1</sup> + 1 x 16<sup>-2</sup> </pre>
+	<p> However, when converting hexadecimal to a radix form, we cannot have letter characters such as A, B, and D. So, we convert these values from hexadecimal to decimal using our conversion table. <br>
+	    Looking at the table above, we can see that </p>
+	<pre> A = 10 </pre>
+	<pre> B = 11 </pre> 
+	<pre> D = 13 </pre>
+	<p> Now that we have found the decimal values, all we do is substitute them into the radix form we found prior. </p>
+	<pre> 4 x 16<sup>2</sup> + A x 16<sup>1</sup> + B x 16<sup>0</sup> + D x 16<sup>-1</sup> + 1 x 16<sup>-2</sup> <-- Before Substitution </pre>
+	<pre> 4 x 16<sup>2</sup> + 10 x 16<sup>1</sup> + 11 x 16<sup>0</sup> + 13 x 16<sup>-1</sup> + 1 x 16<sup>-2</sup> <-- After Substitution</pre>
+	<p> So, 4AB.D1<sub>16</sub> as a radix form is 4 x 16<sup>2</sup> + 10 x 16<sup>1</sup> + 11 x 16<sup>0</sup> + 13 x 16<sup>-1</sup> + 1 x 16<sup>-2</sup> </p>
+	<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </p>
+	<p> Consider the number 1F.0A<sub>16</sub> <br>
+	    Our first step is to determine the positions of the characters/numbers. </p>
+	<pre> 1   F   .   0   A </pre>
+	<pre> ------------------ </pre>
+	<pre> 16<sup>1</sup> 16<sup>0</sup>    16<sup>-1</sup> 16<sup>-2</sup> </pre>
+	<p> Next, we multiply each value in our original number by the corrisponding value. Then, we add everything together. </p>
+	<pre> 1 x 16<sup>1</sup> + F x 16<sup>0</sup> + 0 x 16<sup>-1</sup> + A x 16<sup>-2</sup> </pre>
+	<p> However, we notice that we have letters in our radix form. We cannot have these, so we convert these letters from hexadecimal to decimal. </p>
+	<pre> F = 15 </pre>
+	<pre> A = 10 </pre>
+	<p> Now that we have converted our letter values from hexadecimal to decimal, we can then substitute in. </p>
+	<pre> 1 x 16<sup>1</sup> + F x 16<sup>0</sup> + 0 x 16<sup>-1</sup> + A x 16<sup>-2</sup> <-- Before Substitution</pre>
+	<pre> 1 x 16<sup>1</sup> + 15 x 16<sup>0</sup> + 0 x 16<sup>-1</sup> + 10 x 16<sup>-2</sup> <-- After Substitution</pre>
+	<p> So, 1F.0A<sub>16</sub> as a radix form is 1 x 16<sup>1</sup> + 15 x 16<sup>0</sup> + 0 x 16<sup>-1</sup> + 10 x 16<sup>-2</sup> </pre>
+	
+</body> 
+</html>

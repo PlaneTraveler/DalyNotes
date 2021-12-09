@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Binary, Octal, Decimal, and Hexadecimal Conversions</title>
+		<style>
+		table, th, td {
+  		border: 1px solid black;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>Binary, Octal, Decimal, and Hexadecimal Conversions</h1> 
+		<p>Binary representation is not the only form of representation used within computers. Many other common forms of representation used include octal (Base 8), decimal (Base 10), and hexadecimal (Base 16).<br>
+		   It is an important skill to be able to convert between these bases. Let's see how we can convert between these bases. </p>
+		<h2>Binary to Decimal</h2>
+		<p>When we found the value of a binary number in the last lesson, we were actually converting that value to decimal. Decimal is a base 10 system. Let's take another look at how this works. </p> 
+		<p> Consider the binary number: 11011<sub>2</sub> <br>
+		    To find the value of this binary number, we will first determine the value containing positions. </p>
+		<pre>   1   1   0   1   1    </pre>
+		<pre>   ^   ^   ^   ^   ^    </pre>
+		<pre>  5th 4th 3th 2th 1th   </pre>   
+		<p> We can see that the 5th, 4th, 2nd, and 1st columns have a 1 in them. <br>
+		    Next, let's set up our exponents. Start with 2<sup>0</sup> for the rightmost column, then add 1 to the exponent each time we move a column left. </p>
+		<pre>   1   1   0   1   1      </pre>
+		<pre>  -------------------     </pre>
+		<pre>   2<sup>4</sup>  2<sup>3</sup>  2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup>  </pre>
+		<p>Next, we evaluate the exponents.</p>
+		<pre>   1   1   0   1   1      </pre>
+		<pre>  -------------------     </pre>
+		<pre>   16  8   4   2   1      </pre>
+		<p> Finally, we add the numbers where there are 1's. In this case, we add 16 + 8 + 2 + 1 to get 27. We do not add 4 because there is a 0 in that column.<br>
+		    In finding what this binary number represents, we actually have just converted it to decimal. <br>
+		    So, 11011<sub>2</sub> is 27<sub>10</sub> <br> </p>
+		<h2>Decimal to Binary</h2>
+		<p> Going from binary to decimal is pretty straightforward. But, going back from decimal to hexadecimal is a little bit different. <br>
+		    In order to accomplish this, we first take our decimal number and then find the quotient and remainder when divided by 2. We continue to do this until we hit a quotient of 0. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Convert 40<sub>10</sub> to binary. <br>
+		    First, find the quotient and remainder when divided by 2. <br> </p>
+		<p> 40 / 2 = 20, R = 0 </p>
+		<p> We continue to do this until we hit a quotient of 0. </p>
+		<p> 20 / 2 = 10, R = 0 </p>
+		<p> 10 / 2 = 5, R = 0 </p>
+		<p> 5 / 2 = 2, R = 1 </p>
+		<p> 2/2 = 1, R = 0 </p>
+		<p> 1/2 = 0, R = 1 </p>
+		<p> After dividing 1 by 2, we get the quotient of 0. After we have reached this point, all we have to do is read the remainders from bottom to top. <br>
+		    So, 40<sub>10</sub> is 101000<sub>2</sub> in binary. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Convert 79<sub>10</sub> to binary. 
+		<p> 79 / 2 = 39, R = 1 </p>
+		<p> 39 / 2 = 19, R = 1 </p>
+		<p> 19 / 2 = 9, R = 1 </p>
+		<p> 9 / 2 = 4, R = 1 </p>
+		<p> 4 / 2 = 2, R = 0 </p>
+		<p> 2 / 2 = 1, R = 0 </p>
+		<p> 1 / 2 = 0, R = 1 </p>
+		<p> Now that we have reached 0 as a quotient, we can now read our remainders from bottom to top. <br>
+		    So, 79<sub>10</sub> is 1001111<sub>2</sub> in binary. </p>
+		<h2>Binary to Octal</h2>
+		<p> Converting from binary to octal is very easy. To do this, you must group a binary number in groups of three, starting from the right. <br>
+		    After this is done, you convert those groups of three into decimal numbers. The range of numbers a single grouping can be is 1-7. Octal is a base 8 system. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Convert 1101011<sub>2</sub> to octal <br>
+		    We first take this binary number and group it in sets of three, starting with the right three numbers. </p>
+		<pre> 1 | 1   0   1 | 0   1   1 </pre>
+		<p> Next, we prepare to convert these groupings to decimal form. We do the same exact thing as when we convert binary to decimal, except we reset our exponents with each group. </p>
+		<pre> 1 | 1   0   1 | 0   1   1 </pre>
+		<pre> --------------------------</pre>
+		<pre> 2<sup>0</sup>| 2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup> | 2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup> </pre>
+		<p> After this, we evaluate our exponents. </p>
+		<pre> 1 | 1   0   1 | 0   1   1 </pre>
+ 		<pre> --------------------------</pre>
+		<pre> 1 | 4   2   1 | 4   2   1 </pre>
+		<p> The last thing we need to do is add the values where we have a 1. But, since we're converting to octal, we keep values seperated. </p>
+		<pre> 1 | 4 + 0 + 1 | 0 + 2 + 1 </pre>
+		<pre> 1 |     5     |     3     </pre>
+		<p> Finally, we put these numbers together to recieve our final answer in octal.<br>
+		    So, 1101011<sub>2</sub> in binary is 153<sub>8</sub> in octal. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Convert 11001111<sub>2</sub> to octal <br>
+		    First, group by 3. Make sure to start from the right. </p>
+		<pre> 1   1 | 0   0   1 | 1   1   1 </pre>
+		<p> Next, we set up our exponents. </p>
+		<pre> 1   1 | 0   0   1 | 1   1   1 </pre>
+		<pre> ----------------------------- </pre>
+		<pre> 2<sup>1</sup> 2<sup>0</sup> | 2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup> | 2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup> </pre> 
+		<p> Then, we evaluate our exponents. </p>
+		<pre> 1   1 | 0   0   1 | 1   1   1 </pre>
+		<pre> ----------------------------- </pre>
+		<pre> 2   1 | 4   2   1 | 4   2   1 </pre>
+		<p> After this, we add where we see a 1. </p>
+		<pre> 2 + 1 | 0 + 0 + 1 | 4 + 2 + 1 </pre>
+		<pre>   3   |     1     |     7     </pre>
+		<p> So, 11001111<sub>2</sub> in binary is 317<sub>8</sub> in octal.
+		<h2>Octal to Binary</h2>
+		<p> Next, to go back from octal to binary, all we have to do is turn each digit into its own group of three. The group of three must equal one digit of the number in octal. <br>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Convert 45<sub>8</sub> to binary <br>
+		    The first step is to split each number into its own group of three. In this case, we will have a group for 4, and a group for 5.</p>
+		<pre> 0   0   0  | 0   0   0 </pre>
+		<pre> ---------------------- </pre>
+		<pre>     4      |     5     </pre>
+		<p> In this case, the left group has to equal 4, and the right group has to equal 5. <br>
+		    So, let's take a look at how this is accomplished. </p>
+		<pre> 0   0   0  | 0   0   0 </pre>
+		<pre> ---------------------- </pre>
+		<pre> 4   2   1  | 4   2   1 </pre>
+		<p> We ask ourselves, which combination of these numbers would amount to 4 for the first group, and 5 for the second group? <br>
+		    Starting with the first group for 4, we can see we only would need one value in order to obtain 4 in binary. <br>
+		    So, we do </p>
+		<pre> 1   0   0  </pre>
+		<pre> ---------  <- 4 </pre>
+		<pre> 4   2   1  </pre>
+		<p> Looking at the second part for 5, we would need 1 + 4 in order to obtain 5. Becuase this is the case, we put a 1 in the first and third column of the group. </p?>
+		<pre> 1   0   1  </pre>
+		<pre> ---------  <- 5 </pre>
+		<pre> 4   2   1  </pre>
+		<p> Now, we are finished. All we do it put our two groups together in the same order. Since the original number was 45<sub>8</sub>, we put the group for 4 first and the group for 5 second. <br>
+		    So, 45<sub>8</sub> is 100101<sub>2</sub> in binary.
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Convert 127<sub>8</sub> to binary <br>
+		    First, we make a group for each digit of our octal number. </p>
+		<pre> 0   0   0 | 0   0   0 | 0   0   0 </pre>
+		<pre> --------------------------------- </pre>
+		<pre>     1           2           7     </pre>
+		<p> Next, we determine which combinations would give us the desired values of 1, 2, and 7.
+		<pre> 0   0   0 | 0   0   0 | 0   0   0 </pre>
+		<pre> --------------------------------- </pre>
+		<pre> 4   2   1 | 4   2   1 | 4   2   1 </pre>
+		<p>For the leftmost column, we only need a total of 1.
+		<pre> 0   0   1 </pre>
+		<pre> --------- </pre>
+		<pre> 4   2   1 </pre>
+		<p>For the middle column, we need to get a total of 2.
+		<pre> 0   1   0 </pre>
+		<pre> --------- </pre>
+		<pre> 4   2   1 </pre>
+		<p> Finally, for the third column, we need a total of 7.
+		<pre> 1   1   1 </pre>
+		<pre> --------- </pre>
+		<pre> 4   2   1 </pre>
+		<p>Finally, we put each group together. Since our original total was 127, we put the group for 1 first, then 2, then 7. <br>
+		   So, 127<sub>8</sub> is 001010111<sub>2</sub> in binary. </p>
+		<h2>Binary to Hexadecimal </h2>
+		<p> Converting from binary to hexadecimal is very easy. To do this, we group by 4 starting from the right of the binary number. Hexadecimal is a base 16 system. </p>
+		<table style ="width: 10%">
+			<tr>
+				<th>Binary</th>
+				<th>Hexadecimal</th>
+			</tr>
+			<tr> 
+				<td>0000</td>
+				<td>  0 </td>
+			</tr>
+			<tr> 
+				<td>0001</td>
+				<td>  1 </td>
+			</tr>
+			<tr> 
+				<td>0010</td>
+				<td> 2  </td>
+			</tr>
+			<tr> 
+				<td>0011</td>
+				<td> 3  </td>
+			</tr>
+			<tr> 
+				<td>0100</td>
+				<td>  4  </td>
+			</tr>
+			<tr> 
+				<td>0101</td>
+				<td>  5  </td>
+			</tr>
+			<tr> 
+				<td>0110</td>
+				<td>  6  </td>
+			</tr>
+			<tr> 
+				<td>0111</td>
+				<td>  7  </td>
+			</tr>
+			<tr> 
+				<td>1000</td>
+				<td>  8  </td>
+			</tr>
+			<tr> 
+				<td>1001</td>
+				<td>  9  </td>
+			</tr>
+			<tr> 
+				<td>1010</td>
+				<td>  A  </td>
+			</tr>
+			<tr> 
+				<td>1011</td>
+				<td>  B  </td>
+			</tr>
+			<tr> 
+				<td>1100</td>
+				<td>  C  </td>
+			</tr>
+			<tr> 
+				<td>1101</td>
+				<td>  D </td>
+			</tr>
+			<tr> 
+				<td>1110</td>
+				<td>  E  </td>
+			</tr>
+			<tr> 
+				<td>1111</td>
+				<td>  F  </td>
+			</tr>
+		</table>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Convert 110100111001<sub>2</sub> to hexadecimal <br>
+		    First, group by 4, starting from the right. </p>
+		<pre> 1  1  0  1 | 0  0  1  1 | 1  0  0  1 </pre>
+		<p> At this point, all we have to do is look to our hexadecimal table. From this table, we can see that: </p>
+		<pre> 1  1  0  1 = D </pre>
+		<pre> 0  0  1  1 = 3 </pre>
+		<pre> 1  0  0  1 = 9 </pre>
+		<p> We then just put the numbers/letters together to form our answer. <br>
+		    Since 1101 came first, we put D first. Then, since 0011 was second, we put 3. Finally, since 1001 came third, we put 9. <br>
+		    110100111001<sub>2</sub> is D39<sub>16</sub> in hexadecimal. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Convert 1110010<sub>2</sub> to hexadecimal. <br>
+		    Start by making groups of four, starting from the right. </p>
+		<pre>  1  1  1 | 0  0  1  0 </pre>
+		<p> If there are not enough numbers to make a full group of four, add leading 0's until you have enough to make a full group. </p>
+		<pre>  0  1  1  1 | 0  0  1  0 </pre>
+		<p> Then, just convert as usual by using the hexadecimal chart. </p>
+		<pre> 0  1  1  1 = 7 </pre>
+		<pre> 0  0  1  0 = 2 </pre>
+		<p> Finally, place the numbers in the correct order. The group of binary with the value of 7 came first, so we place a 7 first. The group of binary with the value 2 came second, so we place a 2 after. <br>
+		    So, 1110010<sub>2</sub> is 72<sub>16</sub> in hexadecimal. </p>
+		<h2> Hexadecimal to Binary </h2>
+		<p> Converting back from hexadecimal to binary is also fairly easy. To do this, we look at our hexadecimal conversion chart. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Convert 3A<sub>16</sub> to binary <br>
+		    First, make a group of 4 for both 3 and A. </p>
+		<pre> 0  0  0  0 | 0  0  0  0 </pre>
+		<pre>     3             A     </pre>
+		<p> Next, fill these groups with the corrisponding binary from the conversion chart. </p>
+		<pre> 0  0  1  1 | 1  0  1  0 </pre>
+		<pre>     3             A     </pre>
+		<p> After this, you are done! <br>
+		    3A<sub>16</sub> is 00111010<sub>2</sub> in binary. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Convert 7BD<sub>16</sub> to binary <br>
+		    First, we make three groups for 7, B, and D. </p>
+		<pre> 0  0  0  0 | 0  0  0  0 | 0  0  0  0 </pre>   
+		<pre>      7            B            D     </pre>
+		<p> Next, we fill the groups with the corrisponding binary from the conversion chart </p>
+		<pre> 0  1  1  1 | 1  0  1  1 | 1  1  0  1 </pre>
+		<pre>      7            B            D     </pre>
+		<p> We are done! We now just put it all together. <br>
+		    7BD<sub>16</sub> is 011110111101<sub>2</sub> in binary. </p>
+
+	</body>		
+</html>

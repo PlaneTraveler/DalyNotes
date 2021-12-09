@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Basics of Linear Systems </title>
+	</head>
+	<body>
+		<h1> Basics of Linear Systems </h1>
+		<p> When beginning to learn linear algebra, you must first become familiar with the idea of linear systems. Linear systems are one of the most central and important concepts in linear algebra. A <b>linear system</b> is defined as a set of multiple linear equations that use the same variables.</p>
+		<p> Linear equations take the form a<sub>1</sub>x<sub>1</sub> + a<sub>2</sub>x<sub>2</sub> + ... + a<sub>n</sub>x<sub>n</sub> = b where <b>a</b> and <b>b</b> are always known constants, and <b>x<sub>1</sub></b> through <b>x<sub>n</sub></b> are unknowns.</p>
+		<p> An example of a linear <b>equation</b> is:  </p>
+		<pre> 7x<sub>1</sub> + 11x<sub>2</sub> + 5x<sub>3</sub> = 54 </pre>
+		<p> An example of a linear <b>system</b> is:  </p>
+		<pre> 4x<sub>1</sub> + 7x<sub>2</sub> + 5x<sub>3</sub> = 23 </pre>
+		<pre> 1x<sub>1</sub> + 2x<sub>2</sub> + 9x<sub>3</sub> = 11 </pre>
+		<pre> 8x<sub>1</sub> + 6x<sub>2</sub> + 3x<sub>3</sub> = 42 </pre>
+		<h2> Solution sets of Linear Systems </h2> 
+		<p> For any given linear system, the system could have <br>
+		    1) No solution <br>
+		    2) One solution<br>
+		    3) Infinitely many solutions </p>
+		<p> If a linear system has at least one solution, we call it <b>consistent</b>. If there is no solution to a system, it is <b>inconsistent</b>. </p>
+		<p> Example: Consider the following linear system </p>
+		<pre> 2x<sub>1</sub> + 10x<sub>2</sub> = 20 </pre>
+		<pre> 5x<sub>1</sub> + 5x<sub>2</sub> = 10 </pre>
+		<p> The solution of a linear system of equations is the list of all <b>x</b> values that make the system true when those <b>x</b> values are substituted in. <br>
+		    In this case, the solution of this system is x<sub>1</sub> = 0, and x<sub>2</sub> = 2. Or, you could also say (0,2) <br>
+	            We can verify this is the case by substituting 0 back in for x<sub>1</sub>, and 2 back in for x<sub>2</sub>. </p>
+		<pre> 2(0) + 10(2) = 20  ---> 20 = 20 </pre>
+		<pre> 5(0) + 5(2) = 10 ---> 10 = 10</pre>
+		<p> As we can see, when these values are substituted in, they make both equations true. So, the solution of this system is (0,2). This particular system has only one solution, however, other systems can have either no solution or infinitely many solutions. </p>
+		<h2> Coefficient and Augmented Matricies </h2>
+		<p> Linear systems are most often written as coefficient and augmented matricies. A coefficient matrix is one that places only the variable coefficients from the equations in a matrix. An augmented matrix on the other hand is one that places both the variable coefficients from the equations AND the numbers they are equal to in a matrix.  <br>
+		    Using the same example system from above, it's coefficient matrix would look like:  </p>
+		<pre> 4X<sub>1</sub> + 7x<sub>2</sub> + 5x<sub>3</sub> = 23           | 4   7   5 |                               </pre>
+		<pre> 1X<sub>1</sub> + 2x<sub>2</sub> + 9x<sub>3</sub> = 11     ----> | 1   2   9 |                              </pre>
+		<pre> 8X<sub>1</sub> + 6x<sub>2</sub> + 3x<sub>3</sub> = 42           | 8   6   3 |                              </pre>
+		<p> For the above coefficient matrix, we are only using the coefficients of the variables. The first row in the system is 4x<sub>1</sub> + 7x<sub>2</sub> + 5x<sub>3</sub>, so we use 4, 7, and 5 for the first row of our coefficient matrix. The same process can be repeated for the other two rows. </p>
+		<p> And it's augmented matrix would look like: 
+		<pre> 4X<sub>1</sub> + 7x<sub>2</sub> + 5x<sub>3</sub> = 23           | 4   7   5 | 23 |                             </pre>
+		<pre> 1X<sub>1</sub> + 2x<sub>2</sub> + 9x<sub>3</sub> = 11     ----> | 1   2   9 | 11 |                            </pre>
+		<pre> 8X<sub>1</sub> + 6x<sub>2</sub> + 3x<sub>3</sub> = 42           | 8   6   3 | 42 |                             </pre>   
+		<p> For the augmented matrix, notice how we also include the value that the numbers are equal to. The first row of our original system is 4x<sub>1</sub> + 7x<sub>2</sub> + 5x<sub>3</sub> = 23, and since we are including the numbers they are equal to, we would use 4, 7, 5, AND 23. The same  
+		    process can be repeated to obtain the rest of the matrix. One final thing to keep in mind is that for an augmented matrix the bar is placed between the variable coefficients and the number they are equal to because this is how matricies are set up to be solved. </p>
+		
+		
+														
+		
+	</body>		
+</html>

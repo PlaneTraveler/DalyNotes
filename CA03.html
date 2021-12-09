@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Advanced Binary and Decimal Conversions</title>
+	</head>
+	<body>
+		<h1> Binary and Decimal Conversions (Advanced) </h1>
+		<p> Conversions between the binary and decimal number systems are usually pretty straightforward. However, when numbers with decimals are introduced, the process for converting can be a little different. <br>
+		    Let's take a look at how this is accomplished. </p>
+		<p> Note: This explanation will assume you understand how to convert between basic binary and decimal. If you do not understand this, please go back and review the previous lesson. </p>
+		<h2> Binary to Decimal </h2>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Convert 11011.1010<sub>2</sub> to decimal. <br>
+		    Just like when converting to decimal from binary, we first start by setting up our exponents. Make sure to start at the first place left of the decimal.</p>
+		<pre>   1   1   0   1   1   .   1   0   1   0   </pre>
+		<pre>   --------------------------------------  </pre>
+		<pre>   2<sup>4</sup>  2<sup>3</sup>  2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup>       2<sup>?</sup>  2<sup>?</sup>  2<sup>?</sup>  2<sup>?</sup> </pre>
+		<p> We know that when we move left a column, we increase a power. But what happens when we move right? <br>
+		    Well, when we move right, we subtract the exponent by 1. So, since we start at 2<sup>0</sup> for the column directly left of the decimal, we subtract 1 from the exponent each time we move right. </p>
+		<pre>   1   1   0   1   1   .   1   0   1   0   </pre>
+		<pre>   --------------------------------------  </pre>
+		<pre>   2<sup>4</sup>  2<sup>3</sup>  2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup>      2<sup>-1</sup> 2<sup>-2</sup> 2<sup>-3</sup> 2<sup>-4</sup> </pre>
+		<p> Next, we evaluate our exponents.
+		<pre>   1   1   0   1   1   .   1   0   1   0     </pre>
+		<pre>   --------------------------------------    </pre>
+		<pre>   16  8   4   2   1      .5  .25 .125 .0625 </pre>
+		<p> Finally, we just add our numbers where we see the number 1. In this case, we do 16 + 8 + 2 + 1 + .5 + .125 <br>
+		    This totals to 27.625 <br> 
+		    So, 11011.1010<sub>2</sub> is 27.625<sub>10</sub> in decimal.
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Convert 0111.110<sub>2</sub> to decimal. <br>
+		    So, we first start by setting up our exponents. </p>
+		<pre>   0   1   1   1   .   1   1   0   </pre>
+		<pre>   -----------------------------   </pre>
+		<pre>   2<sup>3</sup>  2<sup>2</sup>  2<sup>1</sup>  2<sup>0</sup>      2<sup>-1</sup> 2<sup>-2</sup> 2<sup>-3</sup> </pre>
+		<p> Next, we evaluate the exponents. </p>
+		<pre>   0   1   1   1   .   1   1   0   </pre>
+		<pre>   -----------------------------   </pre>
+		<pre>   8   4   2   1       .5 .25 .125 </pre>
+		<p> Finally, we just add our exponents where we see the number 1. So, we do 4 + 2 + 1 + .5 + .25 <br>
+		    This totals to 7.75 <br>
+		    So, 0111.110<sub>2</sub> is 7.75<sub>10</sub> in decimal.
+		<h2> Decimal to Binary </h2>
+		<p> Converting back from decimal to binary is a bit more difficult. In this case, we will use two different operations. <br>
+		    For the part of the number that is to the left of the decimal, we will do the remainder method from before. </br>
+		    For the part of the number to the right of the decimal, we will double it, and then put a 1 or a 0 depending on the result. </p>
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 1 </pre>
+		<p> Convert 30.78125<sub>2</sub> to binary. <br>
+		    For this problem, we will use two different operations. <br>
+		    First, let's find what the left side of the decimal evaluates to. We do this by using the division/remainder method that we learned before. Make sure not to use the decimal part of the number. </p>
+		<pre> 30 / 2 = 15, R = 0 </pre>
+		<pre> 15 / 2 = 7, R = 1 </pre>
+		<pre> 7 / 2 = 3, R = 1 </pre>
+		<pre> 3 / 2 = 1, R = 1 </pre>
+		<pre> 1/2 = 0, R = 1 </pre> 
+		<p> Now that we're done this, we know the left part of the binary number is 11110 <br>
+		    To calculate the right side of the number, we do something a little different. We take the decimal number (in this case, .78125) and then double it. <br>
+		    Depending on if this result is greater or less than 1, we put a 1 or a 0 in our decimal number. <p>
+		<pre> .78125 * 2 = 1.5625 </pre>
+		<p> Since our result is greater than or equal to 1, we are going to put a 1 in our binary number after the decimal point. Then, we will subtract 1 from the result and repeat the process. </p>
+		<pre> 11110.1 </pre>
+		<p> We repeat this process until we cannot any further. </p>
+		<pre> .5625 * 2 = 1.125 </pre>
+		<p> Since this number is greater than or equal to 1, we put a 1 in our binary number, then repeat. </p>
+		<pre> 11110.11 </pre>
+		<p> We continue to do this </p>
+		<pre> .125 * 2 = .25 </pre>
+		<p> Since this result is NOT greater than or equal to 1, we put a zero in the binary number. </p>
+		<pre> 11110.110 </pre>
+		<p> We continue with .25 <p>
+		<pre> .25 * 2 = .5 </pre>
+		<p> This result is not greater than or equal to 1, so we put a 0 in our number. </p>
+		<pre> 11110.1100 </pre>
+		<p> Finally, we do </p>
+		<pre> .5 * 2 = 1 </pre>
+		<p> Since 1 is greater than or equal to 1, we put a 1 on our number. </p> 
+		<pre> 11110.11001 </pre>
+		<p> So, 30.78125<sub>10</sub> is 11110.11011<sub>2</sub> in binary.
+		<pre>-----------------------------------------------------------------------------------------------------------------------------------------------------------------> Example 2 </pre>
+		<p> Convert 11.125<sub>10</sub> to binary. <br>
+		    First, we find out what the left side of the decimal evaluates to <p/>
+		<pre> 11 / 2 = 5, R = 1 </pre>
+		<pre> 5 / 2 = 2, R = 1 </pre>
+		<pre> 2 / 2 = 1, R = 0 </pre>
+		<pre> 1 / 2 = 0, R = 1 </pre>
+		<p> So, the left side of our binary number evaluates to 1011 <br>
+		    Let's find the portion after the decimal point now. <p>
+		<pre> .125 * 2 = .25 </pre>
+		<p> Since our result is not greater than or equal to 1, we put a 0 right after the decimal point. </p>
+		<pre> 1011.0 </pre>
+		<p> Next, we repeat this with .25 </p>
+		<pre> .25 * 2 = .5 </pre>
+		<p> Since this result is not greater than or equal to 1, we put another 0. </p>
+		<pre> 1011.00 </pre>
+		<p> Lastly, we repeat with .5 </p>
+		<pre> .5 * 2 = 1 </pre>
+		<p> Since this result is greater than or equal to 1, we put a 1. </p>
+		<pre> 1011.001 </pre>
+		<p> After subtracting 1 from 1, we get 0. So, this was our last iteration. </p>
+		<p> Thus, 11.125<sub>10</sub> is 1011.001<sub>2</sub> in binary. </p> 
+	</body>		 
+</html>
